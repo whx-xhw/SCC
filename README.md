@@ -1,4 +1,5 @@
 # Self-correcting Clustering
+This is the source code of SelfCC.
 
 ## Abstract
 
@@ -14,10 +15,10 @@ You can download the pretrained model weights for different datasets from the fo
 
 | Dataset   | FE Link                                | Center Link                              | Back Link                               |
 |-----------|----------------------------------------|------------------------------------------|-----------------------------------------|
-| Dataset 1 | [Download FE](https://example.com/dataset1/fe)   | [Download Center](https://example.com/dataset1/center) | -                                       |
-| Dataset 2 | [Download FE](https://example.com/dataset2/fe)   | [Download Center](https://example.com/dataset2/center) | -                                       |
-| Dataset 3 | [Download FE](https://example.com/dataset3/fe)   | [Download Center](https://example.com/dataset3/center) | [Download Back](https://example.com/dataset3/back) |
-| Dataset 4 | [Download FE](https://example.com/dataset4/fe)   | [Download Center](https://example.com/dataset4/center) | [Download Back](https://example.com/dataset4/back) |
+| USPS | [Download](https://drive.google.com/file/d/1yK9rzBEkHuhy2DAH-ioMRqgkqBYvUl5n/view?usp=sharing)   | [Download](https://drive.google.com/file/d/1lfpyChSy_XjndIxrobBhj5fccJhF59RV/view?usp=sharing) | -                                       |
+| MNIST | [Download](https://drive.google.com/file/d/1VHNXn-Pv12sSpxrHbQUgukYyq7JdpKFC/view?usp=drive_link)   | [Download](https://drive.google.com/file/d/1-nskm52zKokX45_9JiXFnkh-ODlJE5ND/view?usp=drive_link) | -                                       |
+| STL-10 | [Download](https://drive.google.com/file/d/1CEkzcuda1W7bt_U8iF7dOt8OSsEw3oia/view?usp=sharing)   | [Download](https://drive.google.com/file/d/14Z3OUcN8btiKLRFnnjwkPI6Wg_x-3gBo/view?usp=sharing) | [Download](https://drive.google.com/file/d/1DX8pNbptuaATjGyxzmco8B6TVgdJr1fP/view?usp=sharing) |
+| CIFAR-10 | [Download](https://drive.google.com/file/d/1V7EaUc4UESXMQfzUDsbUxelFNmr3Y92X/view?usp=sharing)   | [Download](https://drive.google.com/file/d/1MQrsxzx0kOPbLexhBi09-60orYAEDa_S/view?usp=sharing) | [Download](https://drive.google.com/file/d/1pBvj8EIVItcoNJu3ohW1s9upOjx_Wj4_/view?usp=sharing) |
 
 After download the pre-trained weights, there files are supposed to be located in './<dataset>/weight/'
 For example, if you want to train a clustering model on USPS, these files should be saved to './usps/weight/' before training.
