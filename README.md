@@ -21,4 +21,5 @@ You can download the pretrained model weights for different datasets from the fo
 | CIFAR-10 | [Download](https://drive.google.com/file/d/1V7EaUc4UESXMQfzUDsbUxelFNmr3Y92X/view?usp=sharing)   | [Download](https://drive.google.com/file/d/1MQrsxzx0kOPbLexhBi09-60orYAEDa_S/view?usp=sharing) | [Download](https://drive.google.com/file/d/1pBvj8EIVItcoNJu3ohW1s9upOjx_Wj4_/view?usp=sharing) |
 
 After download the pre-trained weights, there files are supposed to be located in './<dataset>/weight/'
+
 For example, if you want to train a clustering model on USPS, these files should be saved to './usps/weight/' before training.
