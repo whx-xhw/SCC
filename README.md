@@ -1,11 +1,73 @@
-# SelfCC
-The source code of SelfCC.
-All the self-supervised pre-trained models have been provided. You can find them in /dataset/weight/
-train_dataset.py is the training code.
+# Paper Title: [Your Paper Title]
 
-| Dataset   | Feature Extractor Link                                | Clustering Center Link                              | Classifier Backbone Link                               |
+![Main Image](path/to/your/main-image.png)
+
+## Abstract
+
+[Here is a brief abstract of your paper. You can summarize the problem your paper addresses, the methodology you proposed, and the key results or contributions.]
+
+## Introduction
+
+This repository contains the implementation of the method described in our paper "[Your Paper Title](link to your paper)" published in [Journal/Conference Name]. Our approach [Brief description of the method] achieves state-of-the-art results on [mention relevant tasks or datasets].
+
+## Key Features
+
+- [List key features of your method]
+- [Highlight any unique aspects]
+- [Performance summary or benchmarks]
+
+## Installation
+
+To use the code in this repository, follow the steps below:
+
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/your-username/your-repository.git
+    cd your-repository
+    ```
+
+2. Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+You can run the code as follows:
+
+1. **Data Preparation**: 
+   Place your dataset in the appropriate folder or download it as described in the [dataset documentation](link-to-dataset-documentation).
+
+2. **Training**:
+   To train the model, use the following command:
+    ```bash
+    python train.py --config config.yaml
+    ```
+
+3. **Evaluation**:
+   After training, evaluate the model using:
+    ```bash
+    python evaluate.py --model path/to/saved/model
+    ```
+
+4. **Inference**:
+   To use the trained model for inference on new data:
+    ```bash
+    python inference.py --input path/to/input --model path/to/saved/model
+    ```
+
+## Download Pretrained Weights
+
+You can download the pretrained model weights for different datasets from the following table:
+
+| Dataset   | FE Link                                | Center Link                              | Back Link                               |
 |-----------|----------------------------------------|------------------------------------------|-----------------------------------------|
-| MNIST | [Download](https://example.com/dataset1/fe)   | [Download](https://example.com/dataset1/center) | -                                       |
-| USPS | [Download](https://example.com/dataset2/fe)   | [Download](https://example.com/dataset2/center) | -                                       |
-| STL-10 | [Download](https://example.com/dataset3/fe)   | [Download](https://example.com/dataset3/center) | [Download](https://example.com/dataset3/back) |
-| CIFAR-10 | [Download](https://example.com/dataset4/fe)   | [Download](https://example.com/dataset4/center) | [Download](https://example.com/dataset4/back) |
+| Dataset 1 | [Download FE](https://example.com/dataset1/fe)   | [Download Center](https://example.com/dataset1/center) | -                                       |
+| Dataset 2 | [Download FE](https://example.com/dataset2/fe)   | [Download Center](https://example.com/dataset2/center) | -                                       |
+| Dataset 3 | [Download FE](https://example.com/dataset3/fe)   | [Download Center](https://example.com/dataset3/center) | [Download Back](https://example.com/dataset3/back) |
+| Dataset 4 | [Download FE](https://example.com/dataset4/fe)   | [Download Center](https://example.com/dataset4/center) | [Download Back](https://example.com/dataset4/back) |
+
+## Citation
+
+If you use this code or dataset in your research, please cite our paper:
+
