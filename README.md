@@ -1,6 +1,6 @@
 # Self-correcting Clustering
 
-![Main Image](/img/fig1.pdf)
+![Main Image](/img/fig.PNG)
 
 ## Abstract
 
