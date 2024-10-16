@@ -85,7 +85,7 @@ def rtds_mnist(param, select_idx, select_pseudo_label, device, epoch, aug_data, 
     prob1, loss1 = eval(model=dual_model1, data_loader=dual_model_eval_loader, device=device, loss=CE,
                         eval_number=select_augmented_data.shape[0])
 
-    labeled_idx1, unlabeled_idx1, w_b1 = ensemble_selector(prob=prob1, aug_times=param.aug_times, upsilon=0.3,
+    labeled_idx1, unlabeled_idx1, w_b1 = ensemble_selector(prob=prob1, aug_times=param.aug_times, upsilon=0.5,
                                                            pseudo_label=select_pseudo_label,
                                                            ground_truth_fixed=select_ground_truth_fixed,
                                                            classifier_num=1, epoch=epoch)
@@ -100,7 +100,7 @@ def rtds_mnist(param, select_idx, select_pseudo_label, device, epoch, aug_data, 
 
     prob2, loss2 = eval(model=dual_model2, data_loader=dual_model_eval_loader, device=device, loss=CE, eval_number=select_augmented_data.shape[0])
 
-    labeled_idx2, unlabeled_idx2, w_b2 = ensemble_selector(prob=prob2, aug_times=param.aug_times, upsilon=0.3,
+    labeled_idx2, unlabeled_idx2, w_b2 = ensemble_selector(prob=prob2, aug_times=param.aug_times, upsilon=0.5,
                                                            pseudo_label=select_pseudo_label,
                                                            ground_truth_fixed=select_ground_truth_fixed,
                                                            classifier_num=2, epoch=epoch)
