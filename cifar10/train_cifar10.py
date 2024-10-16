@@ -28,8 +28,8 @@ def main():
     res = get_resnet_cifar(name='ResNet34')
     res.load_state_dict(torch.load('./weight/init_weight.pth'))
     enc = encoder(resnet=res)
-    clustering_module = clustering_model(feat_extractor=enc, fuzzifier=param.fuzzifier, class_number=10, device=device).to(device)
-    init_clustering_center = np.load('./weight/init_clustering_center.npy')
+    clustering_module = clustering_model(feat_extractor=enc, fuzzifier=1.04, class_number=10, device=device).to(device)
+    init_clustering_center = np.load('./weight/center859.npy')
     clustering_module.clustering_layer.data = torch.tensor(init_clustering_center).to(device)
     print('Model has been initialized.')
 

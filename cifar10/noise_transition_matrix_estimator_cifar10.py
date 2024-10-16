@@ -77,11 +77,13 @@ def ntm_estimator(membership, eta, device, model, param):
     ntm_select_idx, ntm_select_pseudo_label = membership_selector_cifar10.membership_selector(membership=membership, eta=int(eta * 1300 * 0.02))
 
     train_trans = get_train_trans()
-    estimate_dataset = sep_dataset_cifar10.cifar10_for_ntm(root='./data/', transform=train_trans, pseudo_labels=ntm_select_pseudo_label, select_index=ntm_select_idx, aug_times=param.aug_times)
+    gtf = np.load('./data/ground_truth_fixed.npy')
+    estimate_dataset = sep_dataset_cifar10.cifar10_for_warm_up(root='./data/', transform=train_trans, pseudo_labels=ntm_select_pseudo_label, select_index=ntm_select_idx, aug_times=param.aug_times,
+                                                               fixed_labels=gtf)
     estimate_loader = DataLoader(dataset=estimate_dataset, batch_size=100, shuffle=False, drop_last=False, num_workers=16)
 
     pred = np.zeros(shape=(len(estimate_dataset) * param.aug_times, 10))
-    for idx, (x, y) in enumerate(estimate_loader):
+    for idx, (x, y, _, _) in enumerate(estimate_loader):
         x = torch.cat(x, dim=0)
         x = x.to(device)
         x = x.float()

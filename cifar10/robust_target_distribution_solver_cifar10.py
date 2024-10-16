@@ -109,11 +109,11 @@ def rtds_cifar10(param, ground_truth_fixed, select_idx, device, epoch, select_ps
     test_loader = DataLoader(test_dataset, batch_size=100, shuffle=False, num_workers=16, drop_last=False)
 
     print('Epoch: {}, warming up for sample selection...'.format(epoch))
-    dual_model1, datas4eval1, pseudo_labelss4eval1, fixed_labelss4eval1, index_4eval1 = warm_up(model=dual_model1, optim=optim1, epoch=5, loss1=CE_Loss, loss2=Conf_Penalty,
+    dual_model1, datas4eval1, pseudo_labelss4eval1, fixed_labelss4eval1, index_4eval1 = warm_up(model=dual_model1, optim=optim1, epoch=1+epoch, loss1=CE_Loss, loss2=Conf_Penalty,
                                                                                                 dataloader=dual_model_train_loader, device=device, crit=1.0,
                                                                                                 bs=512, aug_times=param.aug_times)
 
-    dual_model2, datas4eval2, pseudo_labelss4eval2, fixed_labelss4eval2, index_4eval2 = warm_up(model=dual_model2, optim=optim2, epoch=5, loss1=CE_Loss, loss2=Conf_Penalty,
+    dual_model2, datas4eval2, pseudo_labelss4eval2, fixed_labelss4eval2, index_4eval2 = warm_up(model=dual_model2, optim=optim2, epoch=1+epoch, loss1=CE_Loss, loss2=Conf_Penalty,
                                                                                                 dataloader=dual_model_train_loader, device=device, crit=1.0,
                                                                                                 bs=512, aug_times=param.aug_times)
 
@@ -131,6 +131,7 @@ def rtds_cifar10(param, ground_truth_fixed, select_idx, device, epoch, select_ps
 
     select_info2 = ensemble_selector(prob=prob2, aug_times=param.aug_times, bs=512, pseudo_labels=pl2, fixed_labels=cl2, idx_s=ids2,
                                      threshold=0.2, epoch=epoch, number=2, select_idx=select_idx)
+
 
     accurate_ntm_estimate = False
     # If accurate_ntm_estimate is True, then another temp dual classifiers will be generated and trained with more epochs.
@@ -163,6 +164,8 @@ def rtds_cifar10(param, ground_truth_fixed, select_idx, device, epoch, select_ps
     else:
         print('Epoch: {}, estimate as symmetric noise.'.format(epoch))
 
+    sigma = 0
+
     labeled_loader1, unlabeled_loader1 = labeled_and_unlabeled_loader(select_info=select_info1, param=param)
     labeled_loader2, unlabeled_loader2 = labeled_and_unlabeled_loader(select_info=select_info2, param=param)
 
@@ -174,7 +177,7 @@ def rtds_cifar10(param, ground_truth_fixed, select_idx, device, epoch, select_ps
     optim1 = torch.optim.SGD(params=dual_model1.parameters(), lr=0.1, momentum=0.99)
     optim2 = torch.optim.SGD(params=dual_model2.parameters(), lr=0.1, momentum=0.99)
 
-    for c_epo in range(60):
+    for c_epo in range(10):
         dual_model2, pre_max2 = mixmatch(model1=dual_model2, model2=dual_model1, w_b=w_b1, labeled_loader=labeled_loader1,
                                          unlabeled_loader=unlabeled_loader1, device=device, param=param, semi_loss=semi_loss,
                                          sigma=sigma, optim=optim2, epoch=epoch, model_number=2, rtds_current_epoch=c_epo)

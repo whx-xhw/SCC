@@ -516,7 +516,7 @@ def mixmatch(model1, model2, w_b, labeled_loader, unlabeled_loader, device, para
         pred_mean = torch.softmax(logits, dim=1).mean(0)
         penalty = torch.sum(prior * torch.log(prior / pred_mean))
 
-        loss = L0 + penalty
+        loss = L0
 
         optim.zero_grad()
         loss.backward()
