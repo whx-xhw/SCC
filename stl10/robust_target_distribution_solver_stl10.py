@@ -106,11 +106,11 @@ def rtds_stl10(param, ground_truth_fixed, select_idx, device, epoch, select_pseu
 
     prob1, pl1, cl1, ids1 = eval(model=dual_model1, device=device, aug_times=param.aug_times, bs=64, data4eval=datas4eval1, pseudo_labels4eval=pseudo_labelss4eval1, fixed_labels4eval=fixed_labelss4eval1, s_idx4eval=index_4eval1)
     select_info1 = ensemble_selector(prob=prob1, aug_times=param.aug_times, bs=64, pseudo_labels=pl1, fixed_labels=cl1, idx_s=ids1,
-                                     threshold=0.3, epoch=epoch, number=1, select_idx=select_idx)
+                                     threshold=0.2, epoch=epoch, number=1, select_idx=select_idx)
 
     prob2, pl2, cl2, ids2 = eval(model=dual_model2, device=device, aug_times=param.aug_times, bs=64, data4eval=datas4eval2, pseudo_labels4eval=pseudo_labelss4eval2, fixed_labels4eval=fixed_labelss4eval2, s_idx4eval=index_4eval2)
     select_info2 = ensemble_selector(prob=prob2, aug_times=param.aug_times, bs=64, pseudo_labels=pl2, fixed_labels=cl2, idx_s=ids2,
-                                     threshold=0.3, epoch=epoch, number=2, select_idx=select_idx)
+                                     threshold=0.2, epoch=epoch, number=2, select_idx=select_idx)
 
     accurate_ntm_estimate = False
     # If accurate_ntm_estimate is True, then another temp dual classifiers will be generated and trained with more epochs.
