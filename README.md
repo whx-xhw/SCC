@@ -13,7 +13,7 @@ The incorporation of target distribution significantly enhances the success of d
 
 You can download the pretrained model weights for different datasets from the following table:
 
-| Dataset   | FE Link                                | Center Link                              | Back Link                               |
+| Dataset   | FE Link                                | Center Link                              | Backone Link                               |
 |-----------|----------------------------------------|------------------------------------------|-----------------------------------------|
 | USPS | [Download](https://drive.google.com/file/d/1yK9rzBEkHuhy2DAH-ioMRqgkqBYvUl5n/view?usp=sharing)   | [Download](https://drive.google.com/file/d/1lfpyChSy_XjndIxrobBhj5fccJhF59RV/view?usp=sharing) | -                                       |
 | MNIST | [Download](https://drive.google.com/file/d/1VHNXn-Pv12sSpxrHbQUgukYyq7JdpKFC/view?usp=drive_link)   | [Download](https://drive.google.com/file/d/1-nskm52zKokX45_9JiXFnkh-ODlJE5ND/view?usp=drive_link) | -                                       |
