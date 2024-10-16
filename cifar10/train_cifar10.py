@@ -16,7 +16,7 @@ import torch.nn.functional as F
 parser = argparse.ArgumentParser()
 parser.add_argument('--device', type=int, default=0)
 parser.add_argument('--eta_0', type=float, default=0.6)
-parser.add_argument('--delta_eta', type=float, default=0.025)
+parser.add_argument('--delta_eta', type=float, default=0.05)
 parser.add_argument('--fuzzifier', type=float, default=1.04)
 parser.add_argument('--aug_times', type=int, default=5)
 param = parser.parse_args()
