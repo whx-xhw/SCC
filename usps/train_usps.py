@@ -58,7 +58,7 @@ def main():
     ground_truth_fixed = tools_usps.label_fixer(true_label=raw_label_np, pre_label=init_pseudo_label)
     np.save('./data/ground_truth_fixed.npy', ground_truth_fixed)
 
-    pre_aug_data_path = '/home/hxw/project/selfcc/usps/data/pre_aug_data_aligned.npy'
+    pre_aug_data_path = './data/pre_aug_data_aligned.npy'
 
     if os.path.exists(pre_aug_data_path):
         pre_aug_data = np.load(pre_aug_data_path)
