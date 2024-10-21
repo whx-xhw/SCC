@@ -20,6 +20,6 @@ You can download the pretrained model weights for different datasets from the fo
 | STL-10 | [Download](https://drive.google.com/file/d/1CEkzcuda1W7bt_U8iF7dOt8OSsEw3oia/view?usp=sharing)   | [Download](https://drive.google.com/file/d/14Z3OUcN8btiKLRFnnjwkPI6Wg_x-3gBo/view?usp=sharing) | [Download](https://drive.google.com/file/d/1DX8pNbptuaATjGyxzmco8B6TVgdJr1fP/view?usp=sharing) |
 | CIFAR-10 | [Download](https://drive.google.com/file/d/1V7EaUc4UESXMQfzUDsbUxelFNmr3Y92X/view?usp=sharing)   | [Download](https://drive.google.com/file/d/1iFnUReqtINIcz93xF3o2pm64O8HpjrSS/view?usp=sharing) | [Download](https://drive.google.com/file/d/1pBvj8EIVItcoNJu3ohW1s9upOjx_Wj4_/view?usp=sharing) |
 
-After download the pre-trained weights, there files are supposed to be located in './<dataset>/weight/'
+After download the pre-trained weights, these files are supposed to be located in './<dataset>/weight/'
 
 For example, if you want to train a clustering model on USPS, these files should be saved to './usps/weight/' before training.
