@@ -1,5 +1,5 @@
 # Self-correcting Clustering
-This is the source code of SelfCC.
+This is the source code of Self-correcting Clustering.
 
 ## Abstract
 
